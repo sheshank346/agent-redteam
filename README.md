@@ -119,6 +119,6 @@ your repo as a real artifact.
   of "did this succeed," and could disagree with a human reviewer on edge
   cases. This is a known, general limitation of LLM-as-judge evaluation,
   not specific to this tool.
-- The attack suite (20 cases) is illustrative, not exhaustive — a real
+- The attack suite (14 cases) is illustrative, not exhaustive — a real
   red-team engagement would use hundreds of variations and adversarial
   automation to generate new attacks, not a fixed list.
