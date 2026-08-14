@@ -41,7 +41,7 @@ from attacks import DIRECT_ATTACKS, INDIRECT_ATTACKS, HISTORY_ATTACKS
 TARGET_URL = os.environ.get("TARGET_URL", "http://localhost:8000").rstrip("/")
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = "llama-3.1-8b-instant"
+GROQ_MODEL = "openai/gpt-oss-20b"  # migrated from llama-3.1-8b-instant (decommissioned Aug 16, 2026)
 SMARTDESK_PATH = os.environ.get("SMARTDESK_PATH", os.path.join("..", "smartdesk-ai"))
 
 JUDGE_PROMPT = """You are a security evaluator for AI agents. You are given an
