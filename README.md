@@ -87,33 +87,6 @@ This runs all 14 attacks and prints live results, then saves
 python generate_report.py
 ```
 
-This turns the JSON into a readable `SECURITY_REPORT.md` — commit this to
-your repo as a real artifact.
-
-## What to say about this in an interview
-
-- **"Why build this instead of just adding more features to SmartDesk AI?"**
-  Because measuring whether an AI system is *safe*, not just whether it
-  *works*, is a distinct and increasingly important skill — this project
-  demonstrates thinking about AI systems adversarially, which is exactly
-  what companies deploying agents into production need.
-- **"What's indirect prompt injection, and why does it matter more than
-  direct injection?"** Direct injection requires the attacker to talk to
-  the agent themselves. Indirect injection means *any* data the agent reads
-  — a ticket, a document, a webpage it summarizes — can carry a hidden
-  attack, even from someone who never interacts with the agent at all. It's
-  a bigger and less obvious attack surface, and it's specific to my own
-  agent's actual architecture (ticket subjects get fed into an LLM prompt).
-- **"Why test the conversation-memory feature specifically?"** Because
-  adding conversation memory to SmartDesk AI created a new attack surface
-  that didn't exist before — trusting fabricated history is a realistic risk
-  the moment you add memory to any agent.
-- **"How would you extend this?"** Add more attack categories (denial-of-
-  service via prompt flooding, multi-turn escalation attacks), test against
-  multiple target agents to compare resistance rates, and add automatic
-  retries/statistical confidence since LLM judges aren't perfectly
-  consistent run-to-run.
-
 ## Honest limitations
 - The LLM-as-judge itself isn't perfectly reliable — it's an approximation
   of "did this succeed," and could disagree with a human reviewer on edge
